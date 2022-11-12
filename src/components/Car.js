@@ -1,12 +1,25 @@
 import React from "react";
+import ReactSpeedometer from "react-d3-speedometer";
+import Button from "react-bootstrap/Button";
 
-export default function Car() {
+export default function Car({ state, dispatch }) {
   return (
     <div className="car">
-      <h2>Aussgeschaltet</h2>
-      <button>Anschlalten</button>
-      <button>Gas geben</button>
-      <button>Bremsen</button>
+      {state.isSwitchedOn ? (
+        <ReactSpeedometer
+          value={state.speed}
+          currentValueText={`${state.speed} Km/h`}
+        />
+      ) : (
+        <h1>Ausgeschaltet</h1>
+      )}
+      <Button onClick={() => dispatch({ type: "switchOn/Off" })}>
+        {state.isSwitchedOn ? "Ausschalten" : "Anschalten"}
+      </Button>
+      <Button onClick={() => dispatch({ type: "accelerate" })}>
+        Gas geben
+      </Button>
+      <Button onClick={() => dispatch({ type: "brake" })}>Bremsen</Button>
     </div>
   );
 }
