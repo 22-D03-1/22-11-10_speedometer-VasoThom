@@ -27,12 +27,26 @@ const reducer = (state, action) => {
         speed: state.speed + 5,
       });
     case "brake":
-      return (state = {
-        ...state,
-        speed: state.speed - 5,
-      });
+      if (state.speed > 0) {
+        return (state = {
+          ...state,
+          speed: state.speed - 5,
+        });
+      } else {
+        // {
+        //   alert("stop");
+        //   break;
+        // }
+
+        return (state = {
+          ...state,
+          speed: 0,
+        });
+      }
     default:
+      console.warn("Error: unknown");
   }
+  return state;
 };
 
 function App() {
