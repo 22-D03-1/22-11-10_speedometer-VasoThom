@@ -18,3 +18,7 @@ body {
 .car {
   background-color: white;
 }
+.btn {
+  padding: 10px 20px;
+  color: red;
+}

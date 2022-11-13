@@ -13,13 +13,18 @@ export default function Car({ state, dispatch }) {
       ) : (
         <h1>Ausgeschaltet</h1>
       )}
-      <Button onClick={() => dispatch({ type: "switchOn/Off" })}>
+      <Button
+        className="btn"
+        onClick={() => dispatch({ type: "switchOn/Off" })}
+      >
         {state.isSwitchedOn ? "Ausschalten" : "Anschalten"}
       </Button>
-      <Button onClick={() => dispatch({ type: "accelerate" })}>
+      <Button className="btn" onClick={() => dispatch({ type: "accelerate" })}>
         Gas geben
       </Button>
-      <Button onClick={() => dispatch({ type: "brake" })}>Bremsen</Button>
+      <Button className="btn" onClick={() => dispatch({ type: "brake" })}>
+        Bremsen
+      </Button>
     </div>
   );
 }

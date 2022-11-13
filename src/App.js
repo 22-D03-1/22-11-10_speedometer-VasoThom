@@ -1,7 +1,6 @@
-import "./App.css";
 import Car from "./components/Car";
 import { useReducer } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 const initState = {
   isSwitchedOn: false,
